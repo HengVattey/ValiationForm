@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validation Form</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  
+<input id="input1" type="text" placeholder="Lowercase">
+<br>
+<input id="input2" type="text" placeholder="Uppercase">
+<br>
+<input id="input3" type="text" placeholder="Lowercase and Uppercase">
+
+
+<script> 
+
+$(document).ready(function(){
+$("#input1").on("keypress",function(e){
+const code=e.keyCode;
+if(code>=97 && code<=122){
+return true;
+
+}
+else{
+return false;
+
+}
+
+
+})
+
+
+});
+
+
+$(document).ready(function(){
+$("#input2").on("keypress",function(e) {
+const code=e.keyCode;
+if(code>=65 && code<=90 ){
+    console.log("keypress"+code);
+return true;
+}
+return false;
+console.log(code);
+}
+);
+});
+
+
+
+
+$(document).ready(function(){
+$("#input3").on("keypress", function(e){
+
+let code=e.keyCode;
+
+if(  (code>=65 && code<=90) ||  (code>=97 && code<=122)  ){
+
+return true;
+
+}else{
+return false;
+
+}
+
+
+}   )
+
+});
+
+</script>
+
+</body>
+</html>
